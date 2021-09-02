@@ -4,6 +4,13 @@
   become: true
 
   tasks:
+    # TODO: dotfiles
+    # TODO: Transmission
+    # TODO: Plex
+    # TODO: NFS
+    # TODO: Disable root SSH
+    # TODO: Disable SSH with password
+
     - name: Configure user
       user:
         name: joe
