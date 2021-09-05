@@ -79,3 +79,27 @@
         name: brave-browser
         update_cache: true
         cache_valid_time: 86400
+
+- name: Install Atom
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Install packages
+      apt:
+        name: apt-transport-https
+    - name: Install GPG key
+      apt_key:
+        url: https://packagecloud.io/AtomEditor/atom/gpgkey
+        state: present
+        keyring: /etc/apt/trusted.gpg.d/atom.gpg
+    - name: Install repo
+      apt_repository:
+        repo: 'deb https://packagecloud.io/AtomEditor/atom/any/ any main'
+        state: present
+        filename: atom
+    - name: Install Atom
+      apt:
+        name: atom
+        update_cache: true
+        cache_valid_time: 86400
