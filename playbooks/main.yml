@@ -42,6 +42,7 @@
           - screen
           - gpg
           - ssh
+          - rsync
 
     - name: Set default editor
       alternatives:
