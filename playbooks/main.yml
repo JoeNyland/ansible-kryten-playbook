@@ -55,3 +55,27 @@
         regexp: '^%sudo'
         line: '%sudo ALL=(ALL) NOPASSWD: ALL'
         validate: 'visudo -cf %s'
+
+- name: Install Brave
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Install packages
+      apt:
+        name: apt-transport-https
+    - name: Install GPG key
+      apt_key:
+        url: https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+        state: present
+        keyring: /etc/apt/trusted.gpg.d/brave.gpg
+    - name: Install repo
+      apt_repository:
+        repo: 'deb https://brave-browser-apt-release.s3.brave.com/ stable main'
+        state: present
+        filename: brave
+    - name: Install Brave
+      apt:
+        name: brave-browser
+        update_cache: true
+        cache_valid_time: 86400
