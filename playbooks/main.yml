@@ -44,6 +44,7 @@
           - scdaemon
           - ssh
           - rsync
+          - bash-completion
 
     - name: Set default editor
       alternatives:
