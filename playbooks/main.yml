@@ -4,7 +4,6 @@
   become: true
 
   tasks:
-    # TODO: dotfiles
     # TODO: Plex
     # TODO: Disable root SSH
     # TODO: Disable SSH with password
@@ -64,6 +63,13 @@
         src: server:/srv
         fstype: nfs4
         state: mounted
+
+    - name: Install homeshick
+      become: false
+      git:
+        repo: https://github.com/andsens/homeshick.git
+        dest: /home/joe/.homesick/repos/homeshick
+        force: yes
 
 - name: Install Brave
   hosts: all
