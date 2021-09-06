@@ -6,7 +6,6 @@
   tasks:
     # TODO: dotfiles
     # TODO: Plex
-    # TODO: NFS
     # TODO: Disable root SSH
     # TODO: Disable SSH with password
 
@@ -45,6 +44,7 @@
           - ssh
           - rsync
           - bash-completion
+          - nfs-client
 
     - name: Set default editor
       alternatives:
@@ -57,6 +57,13 @@
         regexp: '^%sudo'
         line: '%sudo ALL=(ALL) NOPASSWD: ALL'
         validate: 'visudo -cf %s'
+
+    - name: Mount server share
+      mount:
+        path: /srv
+        src: server:/srv
+        fstype: nfs4
+        state: mounted
 
 - name: Install Brave
   hosts: all
