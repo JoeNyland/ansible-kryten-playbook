@@ -4,7 +4,6 @@
   become: true
 
   tasks:
-    # TODO: Plex
     # TODO: Disable root SSH
     # TODO: Disable SSH with password
 
