@@ -1,0 +1,13 @@
+---
+- name: Converge
+  hosts: all
+  gather_facts: false
+
+- name: Import playbook
+  import_playbook: ../../kryten.yml
+  vars:
+    # We override dotfiles URL here so that in CI we can install dotfiles without SSH keys.
+    homeshick_dotfiles_repos:
+      dotfiles: https://github.com/JoeNyland/dotfiles.git
+    # We can't run ZFS in CI, so we can't create datasets, either
+    zfs_datasets: {}
