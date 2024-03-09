@@ -1,0 +1,35 @@
+---
+- name: Setup system
+  hosts: localhost
+  become: true
+  roles:
+    - joenyland.brave_browser
+    - joenyland.github_cli
+    - joenyland.homeshick
+    - joenyland.hostname
+    - joenyland.journalctl
+    - joenyland.postfix
+    - joenyland.root_user
+    - joenyland.sanoid
+    - joenyland.sudo
+    - joenyland.step_cli
+    - joenyland.timezone
+    - joenyland.updates
+    - joenyland.vim
+    - joenyland.vs_code
+    - joenyland.zfs
+  tasks:
+    - name: Install packages
+      apt:
+        name:
+          - htop
+          - vim
+          - git
+          - tree
+          - tmux
+          - gnupg
+          - rsync
+          - bash-completion
+          - bsd-mailx
+          - thunderbird
+          - curl

@@ -1,9 +1,6 @@
-# Ansible playbook for Kryten
-
-Configuration management for my PC: Kryten.
+# Ansible playbook for my Kryten
 
 ## Usage
-
 ```bash
-ansible-playbook playbooks/main.yml
+ansible-playbook kryten.yml
 ```

@@ -1,0 +1,34 @@
+---
+collections:
+  - community.general
+roles:
+  - name: joenyland.brave_browser
+    src: https://github.com/JoeNyland/ansible-brave-browser-role
+  - name: joenyland.github_cli
+    src: https://github.com/JoeNyland/ansible-github-cli-role
+  - name: joenyland.homeshick
+    src: https://github.com/JoeNyland/ansible-homeshick-role
+  - name: joenyland.hostname
+    src: https://github.com/JoeNyland/ansible-hostname-role
+  - name: joenyland.journalctl
+    src: https://github.com/JoeNyland/ansible-journalctl-role
+  - name: joenyland.postfix
+    src: https://github.com/JoeNyland/ansible-postfix-role
+  - name: joenyland.root_user
+    src: https://github.com/JoeNyland/ansible-root-user-role
+  - name: joenyland.sanoid
+    src: https://github.com/JoeNyland/ansible-sanoid-role
+  - name: joenyland.step_cli
+    src: https://github.com/JoeNyland/ansible-step-cli-role
+  - name: joenyland.sudo
+    src: https://github.com/JoeNyland/ansible-sudo-role
+  - name: joenyland.timezone
+    src: https://github.com/JoeNyland/ansible-timezone-role
+  - name: joenyland.updates
+    src: https://github.com/JoeNyland/ansible-updates-role
+  - name: joenyland.vim
+    src: https://github.com/JoeNyland/ansible-vim-role
+  - name: joenyland.vs_code
+    src: https://github.com/JoeNyland/ansible-vs-code-role
+  - name: joenyland.zfs
+    src: https://github.com/JoeNyland/ansible-zfs-role

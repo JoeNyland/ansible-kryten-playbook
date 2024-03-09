@@ -1,0 +1,92 @@
+---
+homeshick_dotfiles_repos:
+  dotfiles: git@github.com:JoeNyland/dotfiles.git
+hostname: Kryten
+domain: home.joe.nyland.io
+journalctl_users:
+  - joe
+postfix_aliases:
+  mailer-daemon: postmaster
+  postmaster: root
+  nobody: root
+  hostmaster: root
+  usenet: root
+  news: root
+  webmaster: root
+  www: root
+  ftp: root
+  abuse: root
+  noc: root
+  security: root
+  root: joe
+  joe: joe@home.joe.nyland.io
+postfix_relay_host:
+  host: smtp.home.joe.nyland.io
+sanoid_templates:
+  default:
+    autosnap: 'yes'
+    autoprune: 'yes'
+    frequently: 0
+    hourly: 24
+    daily: 7
+    weekly: 0
+    monthly: 0
+    yearly: 0
+  none:
+    autosnap: 'no'
+    autoprune: 'yes'
+    frequently: 0
+    hourly: 0
+    daily: 0
+    weekly: 0
+    monthly: 0
+    yearly: 0
+sanoid_policies:
+  bpool:
+    use_template: default
+    recursive: 'yes'
+  rpool:
+    use_template: default
+    recursive: 'yes'
+sudo_users:
+  - joe
+zfs_datasets:
+  # Boot
+  bpool:
+    devices: 'off'
+    acltype: posix
+    xattr: sa
+    compression: lz4
+    normalization: formD
+    relatime: 'on'
+    canmount: 'off'
+    mountpoint: /boot
+  bpool/BOOT:
+    canmount: 'off'
+    mountpoint: none
+  bpool/BOOT/debian:
+    mountpoint: /boot
+
+  # Root
+  rpool:
+    encryption: aes-256-gcm
+    keylocation: prompt
+    keyformat: passphrase
+    acltype: posix
+    xattr: sa
+    dnodesize: auto
+    compression: lz4
+    normalization: formD
+    relatime: 'on'
+    canmount: 'off'
+    mountpoint: /
+  rpool/ROOT:
+    canmount: 'off'
+    mountpoint: 'none'
+  rpool/ROOT/debian:
+    canmount: noauto
+    mountpoint: /
+  rpool/var:
+    canmount: 'off'
+  rpool/var/lib:
+    canmount: 'off'
