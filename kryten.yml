@@ -33,3 +33,5 @@
           - bsd-mailx
           - thunderbird
           - curl
+          - ansible
+          - ansible-lint
