@@ -10,6 +10,7 @@
     - joenyland.journalctl
     - joenyland.postfix
     - joenyland.root_user
+    - joenyland.ssh
     - joenyland.sanoid
     - joenyland.sudo
     - joenyland.step_cli

@@ -20,6 +20,8 @@ roles:
     src: https://github.com/JoeNyland/ansible-sanoid-role
   - name: joenyland.step_cli
     src: https://github.com/JoeNyland/ansible-step-cli-role
+  - name: joenyland.ssh
+    src: https://github.com/JoeNyland/ansible-ssh-role
   - name: joenyland.sudo
     src: https://github.com/JoeNyland/ansible-sudo-role
   - name: joenyland.timezone
