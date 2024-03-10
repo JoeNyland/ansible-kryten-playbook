@@ -101,15 +101,17 @@ zfs_datasets:
   rpool/ROOT/debian:
     canmount: noauto
     mountpoint: /
+  rpool/usr:
+    canmount: 'off'
   rpool/var:
     canmount: 'off'
   rpool/var/cache:
-    com.sun:auto-snapshot: 'false'
+    syncoid:sync: 'false'
   rpool/var/lib:
     canmount: 'off'
   rpool/var/lib/docker:
-    com.sun:auto-snapshot: 'false'
+    syncoid:sync: 'false'
   rpool/var/lib/nfs:
-    com.sun:auto-snapshot: 'false'
+    syncoid:sync: 'false'
   rpool/var/tmp:
-    com.sun:auto-snapshot: 'false'
+    syncoid:sync: 'false'
