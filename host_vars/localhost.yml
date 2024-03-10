@@ -60,9 +60,6 @@ sanoid_policies:
   rpool/var/tmp:
     use_template: none
     recursive: 'yes'
-ssh_authorized_keys:
-  - user: joe
-    key: https://github.com/joenyland.keys
 sudo_users:
   - joe
 zfs_datasets:
